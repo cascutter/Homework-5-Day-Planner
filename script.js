@@ -9,10 +9,10 @@ $(document).ready(function () {
 
     // Array of time blocks by hour
     var timeBlocks = ["9 AM" , "10 AM", "11 AM", "12 PM", "1 PM" , "2 PM" , "3 PM" , "4 PM" , "5 PM"];
-    var scheduleArr = ["schedule9", "schedule10", "schedule11", "schedule12", "schedule13", "schedule14", "schedule15", "schedule16", "schedule17"];
+    var scheduleArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
     // Adding in schedule layout and defining elements
-    for (let i = 0; i < timeBlocks.length && i < scheduleArr.length; i++) {
+    for (let i = 0; i < timeBlocks.length; i++) {
         var newDiv = $("<div>");
         var timeDiv = $("<div>");
         var scheduleDiv = $("<textarea>");
@@ -23,7 +23,8 @@ $(document).ready(function () {
         newDiv.attr("id", "time-block", timeBlocks[i]);
         newDiv.attr("class", "row", "id");
         timeDiv.attr("class", "hour col-1");
-        scheduleDiv.attr("class", "schedule col-10", scheduleArr[i]);
+        scheduleDiv.attr("class", "schedule col-10");
+        scheduleDiv.attr("id", scheduleArr[i]);
         saveEl.attr("class", "saveBtn col-1");
         iconEl.attr("class", "far fa-save");
 
@@ -36,64 +37,42 @@ $(document).ready(function () {
         timeDiv.text(timeBlocks[i])
     };
     
-    //let time = calendarTime();
-
+    //Change row color based on time
     var currentTime = moment().hour();
-    var hours = scheduleArr;
-    $(".schedule").each(function() {
-        //var hours = $("#currentDay").attr("textarea")
-        if (hours === currentTime ) {
-            $(this).css("background-color", "red");
+    $("textarea").each(function() {
+        var hours = $(this).attr("id");
+        if (hours == currentTime ) {
+            $(this).addClass("present");
         } else if (hours > currentTime ) {
-            $(this).css("background-color", "green");
+            $(this).addClass("future");
         } else {
-            $(this).css("background-color", "grey");
+            $(this).addClass("past");
         }
     });
 
+    //Save to local storage
     $(function() {
         loadData();
-        function loadData () {
-            $("#textarea").html(localStorage.mydata);
-        }
-        // Add event listener on saved button
+            function loadData () {
+            //Storage for each time slot
+             $("#9").val(localStorage.getItem("9"));
+             $("#10").val(localStorage.getItem("10"));
+             $("#11").val(localStorage.getItem("11"));
+             $("#12").val(localStorage.getItem("12"));
+             $("#13").val(localStorage.getItem("13"));
+             $("#14").val(localStorage.getItem("14"));
+             $("#15").val(localStorage.getItem("15"));
+             $("#16").val(localStorage.getItem("16"));
+             $("#17").val(localStorage.getItem("17"));
+            }
+        // Add event listener on save button
         $(".saveBtn").click(function() {
             //Save data to local storage
-            var scheduleData = $("textarea").val();
-            localStorage.setItem("Scheduled event:", JSON.stringify(scheduleData));
-            localStorage.mydata = scheduleData;
+            var scheduleData = $(this).siblings("textarea").val();
+            var timeSlot = $(this).siblings("textarea").attr("id");
+            localStorage.setItem(timeSlot, scheduleData);
         })
         
     })
+})
 
-    });
-
-    // hour = time.hour();
-    //  $("textarea").each(function() {
-    //     let currentHour = parseInt($(timeBlocks).attr("class"));
-    //     if (calendarTime > hour) {
-    //         $(this).addClass("future");
-    //     } else if (currentHour === hour) {
-    //         $(this).addClass("textarea");
-    //     } else {
-    //         $(this).addClass("past");
-    //     }
-    //     });
-        
-    // };} 
-    // changeRowColor ();
-    // setInterval(changeRowColor, 1000);
-
-    // let time = moment();
-    // function changeRowColor() {
-    //  hour = time.hours();
-    //  $("#schedule").each(function() {
-    //     let currentHour = parseInt($(this).attr("id"));
-    //     if (currentHour > hour) {
-    //         $(this).addClass("future")
-    //     } else if (currentHour === hour) {
-    //         $(this).addClass("present");
-    //     } else {
-    //         $(this).addClass("past");
-    //     }
-    //     });
