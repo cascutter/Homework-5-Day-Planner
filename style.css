@@ -28,7 +28,7 @@ textarea{
 
 .schedule{
   white-space: pre-wrap;
-  border-top: black 1px solid;
+  /*border-top: black 1px solid;*/
 }
 
 #time-block {
@@ -49,17 +49,19 @@ textarea{
 }
 
 .past {
-  background-color: #9D9D9D;
-  color: black;
+  background-color: #d3d3d3;
+  color:  black;
 }
 
 .present {
-  background-color: #F6EF0C;
+  background-color: #ff6961;
+  color: white;
   
 }
 
 .future {
-  background-color: #A5EE83;
+  background-color: #77dd77;
+  color: white;
 }
 
 .saveBtn {
