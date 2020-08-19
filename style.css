@@ -21,11 +21,17 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-.description{
-  white-space: pre-wrap;
+#currentDay {
+  color: #06AED5;
+  font-size: x-large;
 }
 
-.time-block{
+.schedule{
+  white-space: pre-wrap;
+  border-top: black 1px solid;
+}
+
+#time-block {
   text-align: center;
   border-radius: 15px;
 }
@@ -52,7 +58,7 @@ textarea{
   
 }
 
-.future-hour {
+.future {
   background-color: #A5EE83;
 }
 
