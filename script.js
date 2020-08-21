@@ -9,6 +9,7 @@ $(document).ready(function () {
 
     // Array of time blocks by hour
     var timeBlocks = ["9 AM" , "10 AM", "11 AM", "12 PM", "1 PM" , "2 PM" , "3 PM" , "4 PM" , "5 PM"];
+    // Time block number array for color change and local storage
     var scheduleArr = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
     // Adding in schedule layout and defining elements
@@ -18,15 +19,19 @@ $(document).ready(function () {
         var scheduleDiv = $("<textarea>");
         var saveEl = $("<button>");
         var iconEl = $("<i>");
+        var clearEl = $("<button>");
+        var clearIconEl = $("<i>");
 
         // Adding classes and handles for css elements
         newDiv.attr("id", "time-block", timeBlocks[i]);
         newDiv.attr("class", "row", "id");
         timeDiv.attr("class", "hour col-1");
-        scheduleDiv.attr("class", "schedule col-10");
+        scheduleDiv.attr("class", "schedule col-8");
         scheduleDiv.attr("id", scheduleArr[i]);
         saveEl.attr("class", "saveBtn col-1");
         iconEl.attr("class", "far fa-save");
+        clearEl.attr("class", "clearBtn col-1");
+        clearIconEl.attr("class", "far fa-trash-alt");
 
         // Displaying to window
         $(".container").append(newDiv);
@@ -34,6 +39,8 @@ $(document).ready(function () {
         newDiv.append(scheduleDiv);
         newDiv.append(saveEl);
         saveEl.append(iconEl);
+        newDiv.append(clearEl);
+        clearEl.append(clearIconEl);
         timeDiv.text(timeBlocks[i])
     };
     
@@ -71,8 +78,13 @@ $(document).ready(function () {
             var scheduleData = $(this).siblings("textarea").val();
             var timeSlot = $(this).siblings("textarea").attr("id");
             localStorage.setItem(timeSlot, scheduleData);
+        })   
+        $(".clearBtn").click(function() {
+            //Save data to local storage
+            var scheduleData = $(this).siblings("textarea").val("");
+            var timeSlot = $(this).siblings("textarea").attr("id");
+            localStorage.removeItem(timeSlot, scheduleData);
         })
-        
     })
 })
 
