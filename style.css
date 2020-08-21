@@ -18,17 +18,17 @@ textarea{
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 5px solid black;
 }
 
 #currentDay {
-  color: #06AED5;
+  color: rgb(61, 4, 102);
   font-size: x-large;
+  padding-top: 40px;
 }
 
 .schedule{
   white-space: pre-wrap;
-  /*border-top: black 1px solid;*/
 }
 
 #time-block {
@@ -43,24 +43,27 @@ textarea{
 }
 
 .hour {
+  text-align: center;
+  padding-top: 30px;
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
 
 .past {
-  background-color: #d3d3d3;
-  color:  black;
+  background-color: #b8b8b8;
+  color:  white;
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  background-color: #afe0bc;
+  color: black;
+  border: rgb(7, 155, 64) 2px solid;
   
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #e9d684;
   color: white;
 }
 
@@ -68,11 +71,24 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
+  background-color: rgb(223, 190, 5);
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
 }
 
 .saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.clearBtn {
+  border-left: 1px solid black;
+  border-radius: 15px;
+  background-color: rgb(192, 169, 142);
+  color: rgb(0, 0, 0);
+}
+
+.clearBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
