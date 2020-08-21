@@ -1,6 +1,6 @@
 # Homework 5: Day Planner
 
-Homework 5: Day Planner is a simple calendar application that allows the user to save events for each hour of the work day. It runs in the browser and features dyncamically updated HTML and CSS powered by jQuery.
+Homework 5: Day Planner is a simple calendar application that allows the user to save events for each hour of the work day. It runs in the browser and features dynamically updated HTML and CSS powered by JavaSCript using jQuery.
 
 ## Motivation
 
