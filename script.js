@@ -79,7 +79,7 @@ $(document).ready(function () {
             var timeSlot = $(this).siblings("textarea").attr("id");
             localStorage.setItem(timeSlot, scheduleData);
         })   
-        //*Extra* Added clear button to clear indiviual time slots of data in window and console
+        //Extra* Added clear button to clear indiviual time slots of data in window and console
         $(".clearBtn").click(function() {
             var scheduleData = $(this).siblings("textarea").val("");
             var timeSlot = $(this).siblings("textarea").attr("id");
