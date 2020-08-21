@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;;
   font-size: 16px;
   line-height: 1;
 }
@@ -22,9 +22,10 @@ textarea{
 }
 
 #currentDay {
-  color: rgb(61, 4, 102);
-  font-size: x-large;
+  color: #034f84 ;
+  font-size: xx-large;
   padding-top: 40px;
+  font-weight: 600;
 }
 
 .schedule{
@@ -45,25 +46,26 @@ textarea{
 .hour {
   text-align: center;
   padding-top: 30px;
-  background-color: #ffffff;
+  background-color: #92a8d1;
   color: #000000;
   border-top: 1px dashed #000000;
+  border-left: 1px dashed #000000;
 }
 
 .past {
-  background-color: #b8b8b8;
+  background-color: #bfc7cf;
   color:  white;
 }
 
 .present {
-  background-color: #afe0bc;
+  background-color: #ffcc5c;
   color: black;
-  border: rgb(7, 155, 64) 2px solid;
+  border: rgb(241, 226, 14) 5px solid;
   
 }
 
 .future {
-  background-color: #e9d684;
+  background-color: #ff6f69;
   color: white;
 }
 
@@ -71,7 +73,7 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: rgb(223, 190, 5);
+  background-color: #92a8d1;
   color: rgb(0, 0, 0);
   margin-right: 10px;
 }
@@ -84,8 +86,8 @@ textarea{
 .clearBtn {
   border-left: 1px solid black;
   border-radius: 15px;
-  background-color: rgb(192, 169, 142);
-  color: rgb(0, 0, 0);
+  background-color: #034f84;
+  color: white;
 }
 
 .clearBtn i:hover {
