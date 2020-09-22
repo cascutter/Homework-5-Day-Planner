@@ -43,3 +43,6 @@ $(document).ready(function () {
 * JavaScript using jQuery, additional styling and adjustments made to CSS written by Casandra Cutter
 
 * H/t: MDN web docs; w3schools.com; api.jQuery.com; GitHub; stackoverflow.com; Danielle Bowman; David Garza
+
+## License
+MIT
